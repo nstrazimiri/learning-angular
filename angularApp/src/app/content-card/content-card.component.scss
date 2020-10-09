@@ -29,19 +29,19 @@ border: 2px solid #000000;
   transition: all .5s ease-in;
   &:hover{
     border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
   }
 }
 
-.float-left,.float-right{
-  float: left;
-  width: 49%;
-}
+// .float-left,.float-right{
+//   float: left;
+//   width: 49%;
+// }
 
-.float-right{
-  margin-left: 15px;
-}
+// .float-right{
+//   margin-left: 15px;
+// }
 
-.clear{
-  clear: both;
-}
+// .clear{
+//   clear: both;
+// }
