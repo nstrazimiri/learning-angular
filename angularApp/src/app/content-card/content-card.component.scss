@@ -1,18 +1,47 @@
-html {
-    margin:0;
-    padding:0;
-    overflow-x:hidden;
-  }
-  body {
-    margin: 0 auto;
-    width: 950px;
-  }
+:host{
+  width: 70%;
+  display: block;
+  margin: 24px auto;
+  border: 2px dashed #000000;
+  padding: 10px 15px;
 
-img{
-    display: block;
-    max-width: 100%;
+  transition: all .8s ease-in-out;
+
+  &:hover{
+    border: 2px solid #888;
+  }
+}
+:host.is-last{
+border: 2px solid #000000;
+}
+.title{
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.author,.type,.tags{
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-p{
-  color: azure;
+.content-image{
+  max-width: 100%;
+  transition: all .5s ease-in;
+  &:hover{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+.float-left,.float-right{
+  float: left;
+  width: 49%;
+}
+
+.float-right{
+  margin-left: 15px;
+}
+
+.clear{
+  clear: both;
 }

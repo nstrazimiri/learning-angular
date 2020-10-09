@@ -1,1 +1,15 @@
-<div [innerHTML]="displayHTML"></div>
+<div class="content-{{ content.id }}">
+  <h1 class="title">{{ content.title }}</h1>
+    <div class="float-left"> 
+      <div class="image-wrapper" *ngIf="content.imgUrl">
+      <img (click)="imageClicked(content.id)" class="content-image" src="{{ content.imgUrl }}">
+      </div>
+    </div>
+    <div class="float-right">
+      <p class="body" *ngIf="content.body"> {{ content.body }}</p>
+      <h2 class="author">Author: {{ content.author }}</h2>
+      <div class="type" *ngIf="content.type">Type: {{ content.type }}</div>
+      <div class="tags" *ngIf="content.tags">Tags: {{ content.tags }}</div>
+    </div>
+    <div class="clear"></div>
+  </div> 
