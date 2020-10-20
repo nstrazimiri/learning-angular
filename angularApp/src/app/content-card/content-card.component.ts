@@ -18,9 +18,6 @@ export class ContentCardComponent implements OnInit {
  
   constructor() {
    }
-   updateList(input:String):void{
-    console.log("You typed this: "+input)
-  }
 
   ngOnInit(): void {
   }

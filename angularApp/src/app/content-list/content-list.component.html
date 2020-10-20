@@ -1,8 +1,11 @@
 <div class="search-container">
     <input placeholder="Type something nice ..." [(ngModel)]="inputSearch">
 </div>
-<app-content-card *ngFor="let contentIndividual of (contentList | contentTypeEquals:inputSearch); index as i; first as isFirst; last as isLast" [content]="contentIndividual"
-                  class="content-list-{{i}}" [class.is-first]="isFirst" [class.is-last]="isLast">
-
+<app-content-card *ngFor="let contentIndividual of (contentList | contentTypeEquals:'news'); " [content]="contentIndividual"
+                  class="content-list-{{contentIndividual.type}} found-{{(contentIndividual | contentTitleEquals:inputSearch)}}" >
+                  {{ contentIndividual }}
+</app-content-card>
+<app-content-card *ngFor="let contentIndividual of (contentList | contentTypeEquals:'travel' );   " [content]="contentIndividual"
+                  class="content-list-{{contentIndividual.type}} found-{{(contentIndividual | contentTitleEquals:inputSearch)}}" >
                   {{ contentIndividual }}
 </app-content-card>

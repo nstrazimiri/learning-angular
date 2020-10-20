@@ -7,7 +7,7 @@ import { Content } from './helper-files/content-interface';
 export class ContentTypeEqualsPipe implements PipeTransform {
 
   transform(contentList: Content[],typeSearch?: string): Content[] {
-    return typeSearch? contentList.filter(c => c.type.includes(typeSearch)):contentList;
+    return typeSearch? contentList.filter(c => c.type===typeSearch):contentList;
   }
 
 }

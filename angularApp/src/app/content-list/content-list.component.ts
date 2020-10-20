@@ -8,16 +8,10 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 
-
-
 export class ContentListComponent implements OnInit {
   contentList: Content[];
   inputSearch:string;
-  
-
-      
     
-
   constructor() {
 
     this.contentList=[
@@ -41,7 +35,7 @@ export class ContentListComponent implements OnInit {
       },
       {
         id:2,
-        type:'tutorials',
+        type:'news',
         author:'Jane Smith',
         title: 'Photography tricks in 2020',
         body:'Praesent molestie ullamcorper fermentum. Praesent non nunc purus. Aenean sagittis imperdiet sapien, fermentum tincidunt diam tincidunt in. Cras gravida, tortor a semper posuere, est leo vestibulum nibh, ut congue justo velit vel odio. Aliquam dapibus ligula sit amet mauris egestas, ac tincidunt velit iaculis. Aenean consequat, ipsum in pulvinar gravida, sapien metus congue nisl, id volutpat velit nunc euismod purus. Phasellus ac interdum odio, et pharetra orci. Etiam bibendum vitae urna ac lobortis.',
@@ -51,8 +45,8 @@ export class ContentListComponent implements OnInit {
       {
         id:3,
         author:'James Well',
-        type:'health',
-        title: 'Corona & trending Conspiracy theories about it',
+        type:'travel',
+        title: 'Breath taking hikes in BC for this fall',
         body:'Phasellus arcu dolor, congue ut posuere ut, interdum eu nibh. Vivamus massa ante, dignissim id laoreet sit amet, semper ut tellus. Maecenas ac lacinia libero. Ut convallis, massa id elementum tincidunt, eros risus lobortis nibh, non porttitor neque dolor vel odio. Nunc suscipit libero nec magna posuere placerat. Curabitur eu neque in metus efficitur placerat. Cras pellentesque tortor mauris, non blandit eros ultrices sit amet. Aliquam euismod ex sit amet fermentum maximus. Proin tincidunt sagittis leo, sit amet suscipit ipsum rhoncus in. Morbi porta facilisis risus vitae condimentum. Donec tempor magna dolor, ultricies accumsan purus elementum quis. Duis scelerisque porttitor enim, ut eleifend erat sollicitudin quis. Fusce lectus augue, semper non tempus et, cursus vitae nisi.',
         imgUrl:'https://picsum.photos/1000/400?random=3',
       
@@ -69,7 +63,7 @@ export class ContentListComponent implements OnInit {
       {
         id:5,
         author:'Donald Fibonnaci',
-        type:'tech',
+        type:'news',
         title: 'Laravel VS NodeJs, who is winning the battle',
         body:'Interdum eu nibh. Vivamus massa ante, dignissim id laoreet sit amet, semper ut tellus. Maecenas ac lacinia libero. Ut convallis, massa id elementum tincidunt, eros risus lobortis nibh, non porttitor neque dolor vel odio. Nunc suscipit libero nec magna posuere placerat. Curabitur eu neque in metus efficitur placerat. Cras pellentesque tortor mauris, non blandit eros ultrices sit amet. Aliquam euismod ex sit amet fermentum maximus. Proin tincidunt sagittis leo, sit amet suscipit ipsum rhoncus in. Morbi porta facilisis risus vitae condimentum. Donec tempor magna dolor, ultricies accumsan purus elementum quis. Duis scelerisque porttitor enim, ut eleifend erat sollicitudin quis. Fusce lectus augue, semper non tempus et, cursus vitae nisi.',
         imgUrl:'https://picsum.photos/1000/400?random=5',
@@ -77,7 +71,7 @@ export class ContentListComponent implements OnInit {
       },      {
         id:6,
         author:'Darren Clean',
-        type:'tech',
+        type:'news',
         title: 'iOS developers salary keeps increasing',
         body:'Givamus massa ante, dignissim id laoreet sit amet, semper ut tellus. Maecenas ac lacinia libero. Ut convallis, massa id elementum tincidunt, eros risus lobortis nibh, non porttitor neque dolor vel odio. Nunc suscipit libero nec magna posuere placerat. Curabitur eu neque in metus efficitur placerat. Cras pellentesque tortor mauris, non blandit eros ultrices sit amet. Aliquam euismod ex sit amet fermentum maximus. Proin tincidunt sagittis leo, sit amet suscipit ipsum rhoncus in. Morbi porta facilisis risus vitae condimentum. Donec tempor magna dolor, ultricies accumsan purus elementum quis. Duis scelerisque porttitor enim, ut eleifend erat sollicitudin quis. Fusce lectus augue, semper non tempus et, cursus vitae nisi.',
         imgUrl:'https://picsum.photos/1000/400?random=6',
