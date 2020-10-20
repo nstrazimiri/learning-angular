@@ -15,8 +15,12 @@ export class ContentCardComponent implements OnInit {
   imageClicked(id:number){
     console.log("You clicked the image of item #"+id);
   }
+ 
   constructor() {
    }
+   updateList(input:String):void{
+    console.log("You typed this: "+input)
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,7 @@
-<app-content-card *ngFor="let contentIndividual of contentList; index as i; first as isFirst; last as isLast" [content]="contentIndividual"
+<div class="search-container">
+    <input placeholder="Type something nice ..." [(ngModel)]="inputSearch">
+</div>
+<app-content-card *ngFor="let contentIndividual of (contentList | contentTypeEquals:inputSearch); index as i; first as isFirst; last as isLast" [content]="contentIndividual"
                   class="content-list-{{i}}" [class.is-first]="isFirst" [class.is-last]="isLast">
 
                   {{ contentIndividual }}
