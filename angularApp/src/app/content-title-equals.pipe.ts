@@ -11,6 +11,7 @@ export class ContentTitleEqualsPipe implements PipeTransform {
     if(titleSearch && titleSearch !=""){
      
         if (contentItem.title.toLowerCase().includes(titleSearch.toLowerCase())){
+          console.log("Content item with title= "+titleSearch+" exists")
           return true;
         }
   
