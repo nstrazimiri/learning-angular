@@ -20,7 +20,7 @@ export class ContentListComponent implements OnInit {
         author:'Ndricim Strazimiri',
         title: 'College to have the winter online as well',
         type:'news',
-        imgUrl:'https://picsum.photos/1000/400?random=0',
+        tags:["college","winter","online","education"],
         body:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan dolor id nunc consectetur molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque quis leo at erat posuere facilisis. Suspendisse malesuada nulla est, quis suscipit nisl pulvinar at. Aliquam convallis nulla non mauris viverra placerat. Donec sollicitudin ut mauris non laoreet. Curabitur feugiat mattis nulla, non tempus est iaculis eget. Cras a dolor ornare, finibus felis vitae, fermentum tortor. Praesent tincidunt in lectus ac congue. Nullam ut tempor lectus, in malesuada tellus. Curabitur ut posuere massa.'
       },
       {

@@ -43,15 +43,10 @@
   }
 }
 
-// .float-left,.float-right{
-//   float: left;
-//   width: 49%;
-// }
+  .no-image{
+    img{
+      display: block;
+      margin: 0 auto;
+    }
+}
 
-// .float-right{
-//   margin-left: 15px;
-// }
-
-// .clear{
-//   clear: both;
-// }

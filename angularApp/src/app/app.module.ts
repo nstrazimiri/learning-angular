@@ -7,6 +7,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import {FormsModule} from '@angular/forms';
 import { ContentTypeEqualsPipe } from './content-type-equals.pipe';
 import { ContentTitleEqualsPipe } from './content-title-equals.pipe';
+import { HoverStyleDirective } from './hover-style.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ContentTitleEqualsPipe } from './content-title-equals.pipe';
     ContentListComponent,
     ContentTypeEqualsPipe,
     ContentTitleEqualsPipe,
+    HoverStyleDirective,
   ],
   imports: [
     BrowserModule,
