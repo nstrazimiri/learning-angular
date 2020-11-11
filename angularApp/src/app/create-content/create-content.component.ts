@@ -32,6 +32,17 @@ export class CreateContentComponent implements OnInit {
 
 
   addContent(): void{
+    
+    if (this.newContent.tags[0] != undefined){
+      //create an array of tags, splitted by ','
+      var tags = this.newContent.tags[0].split(",");
+      //clear white space around
+      tags = tags.map(t=>t.trim());
+      
+      //assign tags back to content
+      this.newContent.tags = tags;
+    }
+  
     const formPromise = new Promise((success, fail) => {
       this.errors = [];
       if(this.newContent.title == ''){

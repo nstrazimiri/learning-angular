@@ -2,7 +2,11 @@
     <app-create-content (newContentEvent)="addContentToList($event)"></app-create-content>
 </div>
 <div class="search-container">
-    <input placeholder="Type something nice ..." [(ngModel)]="inputSearch">
+    <div class="search">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/VisualEditor_-_Icon_-_Search.svg/1200px-VisualEditor_-_Icon_-_Search.svg.png" alt="search icon" class="search-icon">
+        <input placeholder="Type something nice ..." [(ngModel)]="inputSearch">
+
+    </div>
 </div>
 <app-content-card appHoverCard *ngFor="let contentIndividual of (contentList); first as isFirst; last as isLast" appHoverCard [theIndex]="isFirst || isLast"  [content]="contentIndividual"
                   class="content-list-{{contentIndividual.type}} found-{{(contentIndividual | contentTitleEquals:inputSearch)}}" >
