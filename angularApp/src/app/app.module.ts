@@ -9,6 +9,7 @@ import { ContentTypeEqualsPipe } from './content-type-equals.pipe';
 import { ContentTitleEqualsPipe } from './content-title-equals.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { HoverCardDirective } from './hover-card.directive';
+import { CreateContentComponent } from './create-content/create-content.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HoverCardDirective } from './hover-card.directive';
     ContentTitleEqualsPipe,
     HoverStyleDirective,
     HoverCardDirective,
+    CreateContentComponent,
   ],
   imports: [
     BrowserModule,

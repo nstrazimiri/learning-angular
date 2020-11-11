@@ -15,6 +15,9 @@
   &.content-list-travel{
     border: 2px outset rgb(13, 138, 211);
   }
+  &:not(.content-list-news):not(.content-list-travel){
+    border: 2px solid #671e7e;
+  }
   &.found-true{
     background: rgb(24,194,89);
     background: -moz-linear-gradient(61deg, rgba(24,194,89,1) 0%, rgba(39,147,26,1) 35%, rgba(155,255,0,1) 100%);
