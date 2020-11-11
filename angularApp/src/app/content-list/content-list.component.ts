@@ -82,6 +82,8 @@ export class ContentListComponent implements OnInit {
 
    }
    addContentToList(newContentFromChild: Content): void {
+     //dynamically assign the id, according to the array length
+     newContentFromChild.id = this.contentList.length;
     this.contentList.push(newContentFromChild);
     // We need to clone the array for the pipe to work
     this.contentList = Object.assign([], this.contentList);
