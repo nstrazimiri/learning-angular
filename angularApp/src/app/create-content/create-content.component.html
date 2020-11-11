@@ -1,0 +1,11 @@
+<p><span>Title:*</span><input [(ngModel)]="newContent.title" /></p>
+<p><span>Type:</span><input [(ngModel)]="newContent.type" /></p>
+<p><span>Author:*</span><input [(ngModel)]="newContent.author" /></p>
+<p><span>Tags:</span><input [(ngModel)]="newContent.tags[0]"  placeholder="comma separated for multiple tags"/></p>
+<p><span>Body*:</span><input [(ngModel)]="newContent.body" /></p>
+<p><span>Img Url:</span><input [(ngModel)]="newContent.imgUrl" /></p>
+<button (click)="addContent()">Add Content!</button>
+<p class="error"*ngFor="let error of (errors)">
+    <b>{{error | titlecase}}</b> is required!
+</p>
+<p class="clear"></p>

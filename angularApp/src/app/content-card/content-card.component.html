@@ -1,0 +1,24 @@
+<div class="content-{{ content.id }}">
+  <h1 appHoverStyle [borderBottomColor]="'#ce9d13'" class="title">{{ content.title }}</h1>
+    <div class="float-left"> 
+      <div class="image-wrapper" *ngIf="content.imgUrl; else noImageProvided">
+      <img (click)="imageClicked(content.id)" class="content-image" src="{{ content.imgUrl }}">
+      </div>
+      <ng-template #noImageProvided>
+        <div class="image-wrapper no-image">
+          <img  (click)="imageClicked(content.id)" class="content-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1255/image-not-found.svg">
+        </div>
+      </ng-template>
+    </div>
+    <div class="float-right">
+      <p class="body" *ngIf="content.body"> {{ content.body }}</p>
+      <h2 class="author">Author: {{ content.author }}</h2>
+      <div class="type" *ngIf="content.type">Type: {{ content.type }}</div>
+      <div class="tags" *ngIf="content.tags">Tags:
+        
+        <span *ngFor="let tag of content.tags;"  appHoverStyle [fontWeght]="'bold'">{{ tag |titlecase }}, </span>
+      
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div> 

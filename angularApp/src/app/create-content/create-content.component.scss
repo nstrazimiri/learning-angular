@@ -1,0 +1,37 @@
+.error{
+    color:red;
+}
+
+p:not(.error){
+    width: 280px;
+    display: inline-block;
+    margin-left: 15px;
+    span{
+        display: inline-block;
+        width: 60px;
+    }
+    em{
+        font-weight: bold;
+        font-style: normal;
+        cursor: pointer;
+    }
+    input{
+        padding: 5px 10px;
+        border: 1px solid #343434;
+    }
+}
+
+button{
+    float:right;
+    cursor: pointer;
+    width: 170px;
+    height: 40px;
+    background-color: #1076a5;
+    color: #fff;
+    border: 0;
+    margin-right: 40px;
+}
+
+.clear{
+    clear: right;
+}
