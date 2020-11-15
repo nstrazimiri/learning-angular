@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import {FormsModule} from '@angular/forms';
-import { ContentTypeEqualsPipe } from './content-type-equals.pipe';
-import { ContentTitleEqualsPipe } from './content-title-equals.pipe';
-import { HoverStyleDirective } from './hover-style.directive';
-import { HoverCardDirective } from './hover-card.directive';
+import { ContentTypeEqualsPipe } from './pipes/content-type-equals.pipe';
+import { ContentTitleEqualsPipe } from './pipes/content-title-equals.pipe';
+import { HoverStyleDirective } from './directives/hover-style.directive';
+import { HoverCardDirective } from './directives/hover-card.directive';
 
 @NgModule({
   declarations: [
