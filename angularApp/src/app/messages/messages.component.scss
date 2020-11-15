@@ -1,0 +1,53 @@
+/* MessagesComponent's private CSS styles */
+.messages-container{
+    position: fixed;
+    top: 30px;
+    right: 60px;
+    z-index: 99999;
+    background-color:#903;
+    min-width: 350px;
+    padding: 15px 25px;
+    border-radius: 30px;
+
+    h2 {
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: lighter;
+        text-align: center;
+      }
+      
+      button.clear {
+        font-family: Arial;
+        background-color: #eee;
+        border: none;
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        cursor: pointer;
+        cursor: hand;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        color: #333;
+        transition: .3s ease-in all;
+        transform: rotate(0deg);
+        &:hover{
+            color: #903;
+            transform: rotate(180deg);
+        }
+      }
+    p{
+        margin-left: 10px;
+        color: #cfd8dc;
+        display: list-item;
+        list-style-type: circle;
+        cursor: not-allowed;
+
+        &:hover{
+            text-decoration: line-through;
+        }
+    }
+}
+
+

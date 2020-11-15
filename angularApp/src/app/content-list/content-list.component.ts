@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import {ContentService} from '../services/content.service';
+import {MessageService} from '../services/message.service';
 
 
 
@@ -13,17 +14,24 @@ import {ContentService} from '../services/content.service';
 export class ContentListComponent implements OnInit {
   contentList: Content[];
   inputSearch:string;
+  selectedContent: Content;
     
-  constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService, private messageService: MessageService) {
 
 
 
    }
 
+   onSelect(content: Content): void {
+    this.selectedContent = content;
+    this.messageService.add(`You selected content: ${content.title}`);
+  }
+
 
   ngOnInit(): void {
         //  this.contentList = this.contentService.getContents();
-        this.contentService.getContentsObs().subscribe(content => {
+        this.contentService.getContentsObs()
+        .subscribe(content => {
           this.contentList = content;
         });
   }
