@@ -1,5 +1,6 @@
-<app-create-component (newContentEvent)="addContentToList($event)" (updateGameEvent)="updateTheList($event)"></app-create-component>
-
+<div class="form-container">
+    <app-create-component (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateTheList($event)"></app-create-component>
+</div>
 <div class="search-container">
     <input placeholder="Type something nice ..." [(ngModel)]="inputSearch">
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import {ContentService} from '../services/content.service';
+import { MessageService } from '../services/message.service';
 
 
 
@@ -13,7 +14,7 @@ export class CreateComponentComponent implements OnInit {
   @Output() newContentEvent = new EventEmitter<Content>();
   @Output() updateContentEvent = new EventEmitter<string>();
   newContent: any;
-  constructor(private contentService: ContentService) { 
+  constructor(private contentService: ContentService,private messageService: MessageService) { 
     this.newContent = {
       title: '',
       imageUrl: ''
@@ -26,10 +27,11 @@ export class CreateComponentComponent implements OnInit {
   addContent(): void{
     let newContentFromServer: Content;
     console.log("Trying to add the content to the list", this.newContent);
-    this.contentService.addContent(this.newContent).subscribe(serverGame => {
-      console.log("Added the game to the list", serverGame);
-      // this.contentService.getGames().subscribe(games => console.log(games));
-      newContentFromServer = serverGame;
+    this.contentService.addContent(this.newContent).subscribe(serverContent => {
+      this.messageService.add("Added the content to the list");
+
+      newContentFromServer = serverContent;
+      newContentFromServer.tags = [newContentFromServer.tags[0]]
       this.newContentEvent.emit(newContentFromServer);
     });
 
@@ -39,8 +41,9 @@ export class CreateComponentComponent implements OnInit {
     this.newContent.id = +this.newContent.id;
     console.log("Trying to update the content to the list", this.newContent);
     this.contentService.updateContent(this.newContent).subscribe(_ => {
-      console.log("Content updated!");
-      this.updateContentEvent.emit("Game that was updated should be id: " + this.newContent.id);
+      this.messageService.add('Content Updated');
+
+      this.updateContentEvent.emit("Content that was updated should be id: " + this.newContent.id);
     });
   }
 
