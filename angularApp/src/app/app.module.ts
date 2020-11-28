@@ -10,6 +10,10 @@ import { ContentTitleEqualsPipe } from './pipes/content-title-equals.pipe';
 import { HoverStyleDirective } from './directives/hover-style.directive';
 import { HoverCardDirective } from './directives/hover-card.directive';
 import { MessagesComponent } from './messages/messages.component';
+import { CreateComponentComponent } from './create-component/create-component.component';
+import { HttpClientModule} from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,15 @@ import { MessagesComponent } from './messages/messages.component';
     HoverStyleDirective,
     HoverCardDirective,
     MessagesComponent,
+    CreateComponentComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false,
+        delay: 1000 })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Content} from '../helper-files/content-interface';
-import {CONTENTLIST} from '../helper-files/contentDb';
-import {Observable, of} from 'rxjs';
+import { Content } from '../helper-files/content-interface';
+import { CONTENTLIST } from '../helper-files/contentDb';
+import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,14 +11,22 @@ import { MessageService } from './message.service';
 })
 export class ContentService {
 
-  constructor(private messageService: MessageService) { }
+  constructor(private http: HttpClient, private messageService: MessageService) { }
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-type':
+        'application/json'
+    })
+  };
 
-  getContents(): Content[] { // synchronous
-    return CONTENTLIST;
+
+  getContents(): Observable<Content[]> {
+    return this.http.get<Content[]>('api/fred');
   }
-  getContentsObs(): Observable<Content[]>{ // asynchronous
-    // TODO: send the message _after_ fetching the heroes
-    this.messageService.add('Content retrieved');
-    return of(CONTENTLIST);
+  addContent(content: Content): Observable<Content> {
+    return this.http.post<Content>("api/fred", content, this.httpOptions);
+  }
+  updateContent(content: Content): Observable<any> {
+    return this.http.put<Content>("api/fred", content, this.httpOptions);
   }
 }
