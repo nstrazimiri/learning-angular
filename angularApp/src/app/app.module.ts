@@ -18,6 +18,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
 
 @NgModule({
   declarations: [
@@ -41,8 +47,11 @@ import { MatDialogModule } from '@angular/material/dialog';
         delay: 1000 }),
     BrowserAnimationsModule,
     MatButtonModule,
-MatInputModule,
-MatDialogModule
+    MatInputModule,
+    MatDialogModule,
+    MatCardModule,
+    MatChipsModule,
+    MatIconModule
   ],
   providers: [],
   entryComponents:[CreateContentDialog],

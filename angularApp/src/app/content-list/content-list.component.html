@@ -4,7 +4,7 @@
 <div class="search-container">
     <input placeholder="Type something nice ..." [(ngModel)]="inputSearch">
 </div>
-<app-content-card  appHoverCard *ngFor="let contentIndividual of (contentList); first as isFirst; last as isLast" appHoverCard [theIndex]="isFirst || isLast"  [content]="contentIndividual"
+<app-content-card  appHoverCard *ngFor="let contentIndividual of (contentList); first as isFirst; last as isLast" appHoverCard  [content]="contentIndividual"
                   class="content-list-{{contentIndividual.type}} found-{{(contentIndividual | contentTitleEquals:inputSearch)}}" (click) = "onSelect(contentIndividual)">
                  First: {{isFirst}}
                   {{ contentIndividual }}

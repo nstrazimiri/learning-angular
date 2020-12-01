@@ -1,24 +1,27 @@
-<div class="content-{{ content.id }}">
-  <h1 appHoverStyle [borderBottomColor]="'#ce9d13'" class="title">{{ content.title }}</h1>
-    <div class="float-left"> 
-      <div class="image-wrapper" *ngIf="content.imgUrl; else noImageProvided">
-      <img (click)="imageClicked(content.id)" class="content-image" src="{{ content.imgUrl }}">
-      </div>
-      <ng-template #noImageProvided>
-        <div class="image-wrapper no-image">
-          <img  (click)="imageClicked(content.id)" class="content-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1255/image-not-found.svg">
-        </div>
-      </ng-template>
+<mat-card class="content-card">
+  <mat-card-header>
+    <div mat-card-avatar class="content-header-image" style="background-image: url('https://picsum.photos/40/40?random={{content.id*45}}');"></div>
+    <mat-card-title>{{ content.title }}</mat-card-title>
+    <mat-card-subtitle>{{ content.author }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="image-wrapper" *ngIf="content.imgUrl; else noImageProvided">
+    <img (click)="imageClicked(content.id)" mat-card-image src="{{content.imgUrl}}" alt="Photo for {{content.title}}">
+  </div>
+  <ng-template #noImageProvided>
+    <div class="image-wrapper no-image">
+      <img mat-card-image (click)="imageClicked(content.id)" class="content-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1255/image-not-found.svg">
     </div>
-    <div class="float-right">
-      <p class="body" *ngIf="content.body"> {{ content.body }}</p>
-      <h2 class="author">Author: {{ content.author }}</h2>
-      <div class="type" *ngIf="content.type">Type: {{ content.type }}</div>
-      <div class="tags" *ngIf="content.tags">Tags:
-        
-        <span *ngFor="let tag of content.tags;"  appHoverStyle [fontWeght]="'bold'">{{ tag |titlecase }}, </span>
-      
-      </div>
-    </div>
-    <div class="clear"></div>
-  </div> 
+  </ng-template>
+  <mat-card-content>
+    <p>
+      {{ content.body }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <mat-chip-list class="tags-chip" cdkDropList cdkDropListOrientation="horizontal" >
+    <mat-chip color="accent" selected class="tag-box" cdkDrag *ngFor="let tag of content.tags">
+      {{tag}}
+    </mat-chip>
+  </mat-chip-list>
+  </mat-card-actions>
+</mat-card>

@@ -66,8 +66,8 @@ export class CreateComponentComponent implements OnInit {
 //Dialog component
 @Component({
   selector: 'app-create-content-dialog',
-  templateUrl: './create-content-dialog.component.html',
-  styleUrls: ['./create-component.component.scss']
+  templateUrl: 'create-content-dialog.component.html',
+  styleUrls: ['create-component.component.scss']
 })
 export class CreateContentDialog {
   newContent:any;
