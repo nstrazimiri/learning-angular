@@ -11,16 +11,19 @@ import { HoverStyleDirective } from './directives/hover-style.directive';
 import { HoverCardDirective } from './directives/hover-card.directive';
 import { MessagesComponent } from './messages/messages.component';
 import { CreateComponentComponent, CreateContentDialog } from './create-component/create-component.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -36,7 +39,9 @@ import {MatIconModule} from '@angular/material/icon';
     HoverCardDirective,
     MessagesComponent,
     CreateComponentComponent,
-    CreateContentDialog
+    CreateContentDialog,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatDialogModule,
     MatCardModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot([
+      { path: 'content/:id', component: ContentDetailComponent },
+      { path: '', component: ContentListComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [],
   entryComponents:[CreateContentDialog],

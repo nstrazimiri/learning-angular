@@ -10,12 +10,12 @@ export class InMemoryDataService {
 
   constructor() { }
   createDb(): object {
-    const fred: Content[] = CONTENTLIST;
-    return { fred };
+    const content: Content[] = CONTENTLIST;
+    return { content };
   }
-  genId(fred: Content[]): number{
-    return fred.length > 0 ?
-      Math.max(...fred.map(content => content.id)) + 1
+  genId(content: Content[]): number{
+    return content.length > 0 ?
+      Math.max(...content.map(content => content.id)) + 1
       : 2000;
   }
 }

@@ -1,0 +1,33 @@
+<mat-card class="content-card">
+
+    <a href="">Back</a>
+    <hr>
+    <br>
+    <br>
+    <mat-card-header>
+      <div mat-card-avatar class="content-header-image" style="background-image: url('https://picsum.photos/40/40?random={{content.id*45}}');"></div>
+      <mat-card-title>{{ content.title }}</mat-card-title>
+      <mat-card-subtitle>{{ content.author }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="image-wrapper" *ngIf="content.imgUrl; else noImageProvided">
+      <img  mat-card-image src="{{content.imgUrl}}" alt="Photo for {{content.title}}">
+    </div>
+    <ng-template #noImageProvided>
+      <div class="image-wrapper no-image">
+        <img mat-card-image  class="content-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1255/image-not-found.svg">
+      </div>
+    </ng-template>
+    <mat-card-content>
+      <p>
+        {{ content.body }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-chip-list class="tags-chip" cdkDropList cdkDropListOrientation="horizontal" >
+      <mat-chip color="accent" selected class="tag-box" cdkDrag *ngFor="let tag of content.tags">
+        {{tag}}
+      </mat-chip>
+    </mat-chip-list>
+    <br>  
+    </mat-card-actions>
+  </mat-card>

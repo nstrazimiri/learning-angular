@@ -22,10 +22,10 @@ export class ContentListComponent implements OnInit {
 
    }
 
-   onSelect(content: Content): void {
-    this.selectedContent = content;
-    this.messageService.add(`You selected content: ${content.title}`);
-  }
+  //  onSelect(content: Content): void {
+  //   this.selectedContent = content;
+  //   this.messageService.add(`You selected content: ${content.title}`);
+  // }
 
 
   ngOnInit(): void {

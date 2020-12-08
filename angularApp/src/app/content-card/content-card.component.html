@@ -12,16 +12,8 @@
       <img mat-card-image (click)="imageClicked(content.id)" class="content-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1255/image-not-found.svg">
     </div>
   </ng-template>
-  <mat-card-content>
-    <p>
-      {{ content.body }}
-    </p>
-  </mat-card-content>
   <mat-card-actions>
-    <mat-chip-list class="tags-chip" cdkDropList cdkDropListOrientation="horizontal" >
-    <mat-chip color="accent" selected class="tag-box" cdkDrag *ngFor="let tag of content.tags">
-      {{tag}}
-    </mat-chip>
-  </mat-chip-list>
+  <button mat-raised-button color="primary" [routerLink]="['/content', content.id]" routerLinkActive="active">More ></button>
+
   </mat-card-actions>
 </mat-card>
