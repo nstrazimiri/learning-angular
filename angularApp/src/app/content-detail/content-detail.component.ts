@@ -9,15 +9,15 @@ import { ContentService } from '../services/content.service';
   styleUrls: ['./content-detail.component.scss']
 })
 export class ContentDetailComponent implements OnInit {
-  id: number;
+  _id: number;
   content: Content;
   constructor(private route: ActivatedRoute, private contentService: ContentService) { }
 
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.id = +params.get('id');
-      this.contentService.getContent(this.id).subscribe(singleContent => {
+      this._id = +params.get('id');
+      this.contentService.getContent(this._id).subscribe(singleContent => {
         this.content = singleContent;
       });
     });
